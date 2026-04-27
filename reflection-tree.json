@@ -1,0 +1,239 @@
+{
+    "nodes": [
+        {
+            "id": "START",
+            "type": "start",
+            "text": "DeepThought Daily Audit initiated. Let's go.",
+            "next": "A1_Q1"
+        },
+        {
+            "id": "A1_Q1",
+            "type": "question",
+            "text": "Did you complete your primary goal today?",
+            "options": [
+                {
+                    "text": "Yes, I executed as planned.",
+                    "target": "A1_Q2_POS",
+                    "signal": "axis1:internal"
+                },
+                {
+                    "text": "No, external blockers stopped me.",
+                    "target": "A1_Q2_NEG",
+                    "signal": "axis1:external"
+                }
+            ]
+        },
+        {
+            "id": "A1_Q2_POS",
+            "type": "question",
+            "text": "What was the key driver of that success?",
+            "options": [
+                {
+                    "text": "My disciplined focus.",
+                    "target": "A1_REFL_1",
+                    "signal": "axis1:internal"
+                },
+                {
+                    "text": "I got lucky with the workload.",
+                    "target": "A1_REFL_1",
+                    "signal": "axis1:external"
+                }
+            ]
+        },
+        {
+            "id": "A1_Q2_NEG",
+            "type": "question",
+            "text": "How did you react to those blockers?",
+            "options": [
+                {
+                    "text": "I looked for a workaround immediately.",
+                    "target": "A1_REFL_1",
+                    "signal": "axis1:internal"
+                },
+                {
+                    "text": "I waited for instructions/clearance.",
+                    "target": "A1_REFL_1",
+                    "signal": "axis1:external"
+                }
+            ]
+        },
+        {
+            "id": "A1_REFL_1",
+            "type": "reflection",
+            "text": "Locus check: Ownership is the difference between a victim and a victor.",
+            "next": "A1_Q3"
+        },
+        {
+            "id": "A1_Q3",
+            "type": "question",
+            "text": "If you had to redo today, would you change your approach?",
+            "options": [
+                {
+                    "text": "Yes, I've identified a better way.",
+                    "target": "A1_REFL_2",
+                    "signal": "axis1:internal"
+                },
+                {
+                    "text": "No, I did the best possible under the circumstances.",
+                    "target": "A1_REFL_2",
+                    "signal": "axis1:external"
+                }
+            ]
+        },
+        {
+            "id": "A1_REFL_2",
+            "type": "reflection",
+            "text": "Self-correction is the ultimate engine of growth.",
+            "next": "BRIDGE_1"
+        },
+        {
+            "id": "BRIDGE_1",
+            "type": "bridge",
+            "text": "Transitioning: From personal agency to team contribution...",
+            "next": "A2_Q1"
+        },
+        {
+            "id": "A2_Q1",
+            "type": "question",
+            "text": "Did a teammate struggle today?",
+            "options": [
+                {
+                    "text": "Yes, I noticed and helped.",
+                    "target": "A2_Q2",
+                    "signal": "axis2:contribution"
+                },
+                {
+                    "text": "I didn't notice/was too busy.",
+                    "target": "A2_Q2",
+                    "signal": "axis2:entitlement"
+                }
+            ]
+        },
+        {
+            "id": "A2_Q2",
+            "type": "question",
+            "text": "How do you view your role in the team's failure?",
+            "options": [
+                {
+                    "text": "I am responsible for the team's output.",
+                    "target": "A2_REFL_1",
+                    "signal": "axis2:contribution"
+                },
+                {
+                    "text": "I am only responsible for my own tickets.",
+                    "target": "A2_REFL_1",
+                    "signal": "axis2:entitlement"
+                }
+            ]
+        },
+        {
+            "id": "A2_REFL_1",
+            "type": "reflection",
+            "text": "Orientation check: Givers build systems; takers just inhabit them.",
+            "next": "A2_Q3"
+        },
+        {
+            "id": "A2_Q3",
+            "type": "question",
+            "text": "Did you share a learning or resource today?",
+            "options": [
+                {
+                    "text": "Yes, I documented a solution.",
+                    "target": "A2_REFL_2",
+                    "signal": "axis2:contribution"
+                },
+                {
+                    "text": "No, I didn't find anything worth sharing.",
+                    "target": "A2_REFL_2",
+                    "signal": "axis2:entitlement"
+                }
+            ]
+        },
+        {
+            "id": "A2_REFL_2",
+            "type": "reflection",
+            "text": "Knowledge shared is impact multiplied.",
+            "next": "BRIDGE_2"
+        },
+        {
+            "id": "BRIDGE_2",
+            "type": "bridge",
+            "text": "Transitioning: From team contribution to ecosystem impact...",
+            "next": "A3_Q1"
+        },
+        {
+            "id": "A3_Q1",
+            "type": "question",
+            "text": "Does your work today matter to the end-user?",
+            "options": [
+                {
+                    "text": "Yes, it solves a real pain point.",
+                    "target": "A3_Q2",
+                    "signal": "axis3:altrocentric"
+                },
+                {
+                    "text": "I'm not sure who the end-user is.",
+                    "target": "A3_Q2",
+                    "signal": "axis3:self-centric"
+                }
+            ]
+        },
+        {
+            "id": "A3_Q2",
+            "type": "question",
+            "text": "Are you thinking about the product's 1-year roadmap?",
+            "options": [
+                {
+                    "text": "Yes, I see where this leads.",
+                    "target": "A3_REFL_1",
+                    "signal": "axis3:altrocentric"
+                },
+                {
+                    "text": "No, I'm focused on this week's sprint.",
+                    "target": "A3_REFL_1",
+                    "signal": "axis3:self-centric"
+                }
+            ]
+        },
+        {
+            "id": "A3_REFL_1",
+            "type": "reflection",
+            "text": "Radius check: Wide perspective leads to strategic leadership.",
+            "next": "A3_Q3"
+        },
+        {
+            "id": "A3_Q3",
+            "type": "question",
+            "text": "Would you use the product you worked on today?",
+            "options": [
+                {
+                    "text": "Absolutely, it's high quality.",
+                    "target": "A3_REFL_2",
+                    "signal": "axis3:altrocentric"
+                },
+                {
+                    "text": "Probably not, it's just a task.",
+                    "target": "A3_REFL_2",
+                    "signal": "axis3:self-centric"
+                }
+            ]
+        },
+        {
+            "id": "A3_REFL_2",
+            "type": "reflection",
+            "text": "Integrity in execution is the hallmark of a founder.",
+            "next": "SUMMARY"
+        },
+        {
+            "id": "SUMMARY",
+            "type": "summary",
+            "text": "Audit complete. Reviewing your signals now...",
+            "next": "END"
+        },
+        {
+            "id": "END",
+            "type": "end",
+            "text": "Data logged. DeepThought protocol offline."
+        }
+    ]
+}
